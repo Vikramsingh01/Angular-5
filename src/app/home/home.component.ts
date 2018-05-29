@@ -42,7 +42,8 @@ myStyle:{};
 color:string;
 currentCssClass:string='styleRed';
 inputColor:string='red';
-
+name:string='vishal';
+flag:boolean=false;
 setStyle() {
   this.myStyle = {
     'font-weight': 'bold',
@@ -50,14 +51,16 @@ setStyle() {
     'color': this.generateColor()
   };
 }
-setCSSClass(){
-  if(this.currentCssClass=='styleRed'){
-this.currentCssClass='styleWhite';
+changeName(){
+  if(this.flag==false){
+this.name='prashant';
   }else{
-    this.currentCssClass='styleRed';
+    this.name='vishal';
   }
-  console.log(this.currentCssClass);
+  console.log(this.name);
+  this.flag=!this.flag;
 }
+
 generateColor() {
   this.color = '#';
   var letters = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];

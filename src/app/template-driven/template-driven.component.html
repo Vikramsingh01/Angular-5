@@ -1,20 +1,57 @@
 <div class="container">
   <div class="jumbotron">
-      <form #frm ="ngForm">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" name="">
+    <form #frm="ngForm" (ngSubmit) ="addUser(frm)" >
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" class="form-control" #nameUSer ="ngModel" ngModel required pattern="[a-azA-Z][a-zA-Z]+">
+      </div>
+
+    <div *ngIf ="nameUSer.touched" class="alert alert-danger">
+        <div *ngIf ="nameUSer.errors?.required">
+            Name is required
+          </div>
+          <div *ngIf ="nameUSer.errors?.pattern">
+              Invalid Name!
+            </div>
+    </div>
+
+      <div class="form-group">
+        <label for="Contact">Contact:</label>
+        <input type="text" name="contact" class="form-control" minlength="10" maxlength="10" #contactUSer ="ngModel" ngModel required pattern="^[0-9]*$">
+      </div>
+
+      <div *ngIf="contactUSer.touched" class="alert alert-danger">
+          <div *ngIf="contactUSer.errors?.required">
+            Contact is required
+          </div>
+          <div [hidden]="!contactUSer?.hasError('minlength')">
+              Invalid Contact!
+            </div>
+        </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" name="email" class="form-control" #emailUSer ="ngModel" ngModel required pattern="^[a-z0-9](\.?[a-z0-9]){5,}@gmail\.com$">
+        <br>
+        <div *ngIf="emailUSer.touched" class="alert alert-danger">
+            <div *ngIf="emailUSer.errors?.required">
+              Email is required
+            </div>
+            <div *ngIf ="emailUSer.errors?.pattern">
+                Invalid Email!
+              </div>
           </div>
         
-          <div class="form-control">
-            <label for="Contact">Contact:</label>
-            <input type="text" name="">
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="text" name="">
-            <button type="submit" name="btn" class="btn btn-success">Add User</button>
-          </div>
-        </form>
+        <br>
+        <button type="submit" name="btn" class="btn btn-success" [disabled]="frm.invalid" >Add User</button>
+      </div>
+    </form>
   </div>
 </div>
+
+<ul class="list-group">
+  <li *ngFor="let user of userList" class="list-group-item">
+{{user?.name}}
+  </li>
+</ul>
+{{frm.value | json}}

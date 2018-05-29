@@ -40,8 +40,8 @@
         </div>
   </div>
 <button type="button" (click)="setStyle()" name="button">change style</button>
-<h2 [ngClass]="currentCssClass" >Changes css class dynamically</h2>
-<button type="button" name="button" (click)="setCSSClass()">change style</button>
+<h2 [ngClass]="currentCssClass" >{{name}}</h2>
+<button type="button" name="button" (click)="changeName()">change Name</button>
 
 <h2 [style.color]="inputColor">Change Text color using ng model</h2>
 <input type="text" [(ngModel)] = "inputColor" name="" value="">

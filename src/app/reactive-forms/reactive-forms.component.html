@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="jumbotron">
+    <form novalidate [formGroup]="form" (ngSubmit)="addUser()">
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" formControlName="name"  class="form-control">
+        </div>
+  <div *ngIf="form.get('name').hasError('required')" class="alert alert-danger">
+    Nmae Required
+  </div>
+  
+        <div class="form-group ">
+          <label for="Contact">Contact:</label>
+          <input type="text " formControlName="contact" class="form-control">
+        </div>
+        <div *ngIf="form.get('contact').hasError('required')"  class="alert alert-danger">
+            Contact Required
+          </div>
+      
+        <div class="form-group ">
+          <label for="email">Email:</label>
+          <input type="text" formControlName="email" class="form-control">
+          <br>
+          <div *ngIf="form.get('email').hasError('required')" class="alert alert-danger">
+              Email Required
+            </div>
+            <br>
+          <button type="submit " name="btn" class="btn btn-success" [disabled]="form.invalid">Add User</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
+  {{form.value | json}}
