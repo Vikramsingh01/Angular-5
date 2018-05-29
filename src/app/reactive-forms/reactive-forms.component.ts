@@ -23,8 +23,8 @@ export class ReactiveFormsComponent implements OnInit {
   ngOnInit() {
     this.form= new FormGroup({
       name: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z][a-zA-Z]+')]),
-      contact: new FormControl('',[Validators.required,Validators.pattern('[0-9]*'),Validators.maxLength(12),Validators.minLength(12)]),
-      email: new FormControl('',[Validators.required,Validators.email])
+      contact: new FormControl('',[Validators.required,Validators.pattern('[0-9]*'),Validators.maxLength(12),Validators.minLength(10)]),
+      email: new FormControl('',[Validators.required])
     })
   }
 
