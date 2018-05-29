@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {trigger,state,style,animate,transition,stagger,query,keyframes}from '@angular/animations';
 import { DataService } from '../data.service';
+import { BootstrapOptions } from '@angular/core/src/application_ref';
 
 @Component({
   selector: 'app-home',
@@ -34,11 +35,47 @@ itemCount: number;
 btnText: string = 'Add an item';
 goalText: string = 'my first goal';
 goals = [];
+hero: string;
+selectedhero:string;
+dcHeros: string[]=['batman','superman','spirderman','IronMan'];
+myStyle:{};
+color:string;
+currentCssClass:string='styleRed';
+inputColor:string='red';
+
+setStyle() {
+  this.myStyle = {
+    'font-weight': 'bold',
+    'font-size': '24px',
+    'color': this.generateColor()
+  };
+}
+setCSSClass(){
+  if(this.currentCssClass=='styleRed'){
+this.currentCssClass='styleWhite';
+  }else{
+    this.currentCssClass='styleRed';
+  }
+  console.log(this.currentCssClass);
+}
+generateColor() {
+  this.color = '#';
+  var letters = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+  for(let i = 0; i<6;i++) {
+    this.color += letters[Math.floor(Math.random()*16)];
+  }
+  return this.color;
+}
+
+sH(hero){
+    this.selectedhero=hero;
+    console.log(hero);
+}
   constructor(private _data: DataService) { }
 
   ngOnInit() {
     this._data.goal.subscribe(res => this.goals = res);
-    this.itemCount=this.goals.length;
+      this.itemCount=this.goals.length;
     this._data.changeGoal(this.goals);
   }
   addItem(){
@@ -52,7 +89,7 @@ goals = [];
     this.itemCount=this.goals.length;
     this._data.changeGoal(this.goals);
   }
-
+ 
 }
 
 

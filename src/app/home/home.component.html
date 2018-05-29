@@ -22,4 +22,26 @@
       </p>
     </div>
   </div>    
-  
+  <div>
+    
+
+    <div class="" *ngFor="let hero of dcHeros; let i =index" (click)="sH(hero)" appAppBold bgColor='red'>
+      <li>
+      {{i+1}}  {{hero}}
+    </li>
+
+    </div>
+      <div [ngSwitch]="selectedhero" class="color-light" [ngStyle]="myStyle" >
+          <div *ngSwitchCase="'batman'">vikram</div>
+          <div *ngSwitchCase="'superman'">prashant</div>
+          <div *ngSwitchCase="'spirderman'">bharat</div>
+          <div *ngSwitchCase="'IronMan'">vishal</div>
+          <div *ngSwitchDefault>No Item selected</div>
+        </div>
+  </div>
+<button type="button" (click)="setStyle()" name="button">change style</button>
+<h2 [ngClass]="currentCssClass" >Changes css class dynamically</h2>
+<button type="button" name="button" (click)="setCSSClass()">change style</button>
+
+<h2 [style.color]="inputColor">Change Text color using ng model</h2>
+<input type="text" [(ngModel)] = "inputColor" name="" value="">

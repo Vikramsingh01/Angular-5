@@ -20,10 +20,10 @@ input.txt{
     margin-bottom: 2em;
 }
 input.btn {
- border: 0;
+ border: 3px;
  display: block;
  padding: 1em 3em;
- background: #A5F883;
+ background: slategrey;
  color: #003A61;
  margin-bottom:1em;
  cursor: pointer;
@@ -33,4 +33,12 @@ input.btn {
     padding: 1em;
     font-weight: bold;
     cursor: pointer;
+}
+.styleRed{
+    background-color: black;
+    color: red;
+}
+.styleWhite{
+background-color: black;
+color: white;
 }

@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "name": "BMW",
+      "color": "Green",
+      "id": 2
+    },
+    {
+      "name": "asdf",
+      "color": "sadf",
+      "id": 3
+    },
+    {
+      "name": "sdf",
+      "color": "asdf",
+      "id": 5
+    },
+    {
+      "name": "asdfsadf",
+      "color": "sadfsdf",
+      "id": 6
+    },
+    {
+      "name": "This is my car",
+      "color": "my color",
+      "id": 7
+    }
+  ]
+}
