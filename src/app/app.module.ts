@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { AppBoldDirective } from './app-bold.directive';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     AboutComponent,
     AppBoldDirective,
     TemplateDrivenComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
