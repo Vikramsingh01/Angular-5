@@ -3,26 +3,31 @@
     {
       "name": "BMW",
       "color": "Green",
+      "price": "1000000",
       "id": 2
     },
     {
-      "name": "asdf",
-      "color": "sadf",
+      "name": "maruti",
+      "color": "white",
+      "price": "2000000",
       "id": 3
     },
     {
-      "name": "sdf",
-      "color": "asdf",
+      "name": "toyota",
+      "color": "pink",
+      "price": "3000000",
       "id": 5
     },
     {
-      "name": "asdfsadf",
-      "color": "sadfsdf",
+      "name": "harley",
+      "color": "black",
+      "price": "1000000",
       "id": 6
     },
     {
-      "name": "This is my car",
-      "color": "my color",
+      "name": "Mustung",
+      "color": "gray",
+      "price": "5000000",
       "id": 7
     }
   ]

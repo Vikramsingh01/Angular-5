@@ -4,6 +4,7 @@ import {AboutComponent} from './about/about.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { ListComponent } from './list/list.component'; 
+import { ProductRoutes } from './product/product.routes';
 
   export const routes: Routes = [
     {path: '',component: HomeComponent},
@@ -11,4 +12,5 @@ import { ListComponent } from './list/list.component';
     {path: 'tempsignup',component: TemplateDrivenComponent },
     {path: 'reactivesignup',component: ReactiveFormsComponent },
     {path: 'dataservices',component: ListComponent},
+    {path: 'product',children: ProductRoutes}
     ];

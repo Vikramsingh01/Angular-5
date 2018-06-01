@@ -13,6 +13,10 @@ import { AppBoldDirective } from './app-bold.directive';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { ListComponent } from './list/list.component';
+import { ProductComponent } from './product/product.component';
+import { AppTopPanelComponent } from './app-top-panel/app-top-panel.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { ListComponent } from './list/list.component';
     AppBoldDirective,
     TemplateDrivenComponent,
     ReactiveFormsComponent,
-    ListComponent
+    ListComponent,
+    ProductComponent,
+    AppTopPanelComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
