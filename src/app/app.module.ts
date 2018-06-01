@@ -17,6 +17,8 @@ import { ProductComponent } from './product/product.component';
 import { AppTopPanelComponent } from './app-top-panel/app-top-panel.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { ProductAddComponent } from './product-add/product-add.component';
+import { ProductUpdateComponent } from './product-update/product-update.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { HeaderComponent } from './header/header.component';
     ProductComponent,
     AppTopPanelComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductAddComponent,
+    ProductUpdateComponent
   ],
   imports: [
     BrowserModule,

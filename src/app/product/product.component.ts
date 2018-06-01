@@ -15,6 +15,14 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     this.dataService.getlistItems().subscribe((response: Response)=>{
       this.items = response.json();
-    });
+    });}
+
+    delete(id) {
+      if(confirm("Sure?")) {
+        this.dataService.deleteItem(id).toPromise().then(res=>{
+          this.ngOnInit();
+        })
+      
 
 }}
+}

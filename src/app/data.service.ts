@@ -20,5 +20,17 @@ export class DataService {
   getlistItems(){
     return this.http.get(this.basrUrl);
   }
+ addItem(item) {
+  return this.http.post(this.basrUrl, item);
+}
+deleteItem(id) {
+  return this.http.delete(this.basrUrl+"/"+id);
+}
+getItem(id) {
+  return this.http.get(this.basrUrl+"/"+id);
+}
+updateItem(item, id) {
+  return this.http.put(this.basrUrl+"/"+id, item);
+}
 
 }
