@@ -1,58 +1,16 @@
 {
   "products": [
     {
-      "name": "skoda",
-      "color": "ruff",
-      "price": "5555555",
-      "id": 3
-    },
-    {
-      "name": "toyota",
-      "color": "red",
-      "price": "1455212",
-      "id": 4
-    },
-    {
-      "name": "sdfs",
-      "color": "dsfsf",
-      "price": "546456",
-      "id": 5
-    },
-    {
-      "name": "gfdf",
-      "color": "dfg",
-      "price": "43535435",
+      "name": "b",
+      "color": "b",
+      "price": "2233",
       "id": 6
     },
     {
-      "name": "gfdf",
-      "color": "dfg",
-      "price": "43535435",
-      "id": 7
-    },
-    {
-      "name": "gdfgd",
-      "color": "ertert",
-      "price": "34535",
-      "id": 8
-    },
-    {
-      "name": "gjgh",
-      "color": "ghjghj",
-      "price": "8678678",
-      "id": 9
-    },
-    {
-      "name": "sdffsd",
-      "color": "dsf",
-      "price": "2343",
-      "id": 10
-    },
-    {
-      "name": "dsgf",
+      "name": "df",
       "color": "dfs",
-      "price": "324234",
-      "id": 11
+      "price": "3453",
+      "id": 7
     }
   ]
 }

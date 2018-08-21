@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {trigger,state,style,animate,transition,stagger,query,keyframes}from '@angular/animations';
-import { DataService } from '../data.service';
+import { ProductService } from '../productservice';
 import { BootstrapOptions } from '@angular/core/src/application_ref';
 
 @Component({
@@ -38,30 +38,24 @@ goals = [];
 hero: string;
 selectedhero:string;
 dcHeros: string[]=['batman','superman','spirderman','IronMan'];
-myStyle:{};
+
 color:string;
-currentCssClass:string='styleRed';
+currentCssClass:string='styleWhite';
 inputColor:string='red';
-name:string='vishal';
+name:string='Click on Change button to change name';
 flag:boolean=false;
+myStyle:{};
+styleToggleFlag:boolean=true;
 setStyle() {
   this.myStyle = {
-    'font-weight': 'bold',
-    'font-size': '24px',
+    'font-weight': this.styleToggleFlag ? 'bold' : 'normal',
+    'font-size': this.styleToggleFlag ? '24px': '15px',
     'color': this.generateColor()
-  };
-}
-changeName(){
-  if(this.flag==false){
-this.name='prashant';
-  }else{
-    this.name='vishal';
   }
-  console.log(this.name);
-  this.flag=!this.flag;
+  this.styleToggleFlag = !this.styleToggleFlag;
 }
-
 generateColor() {
+  //#ffffff
   this.color = '#';
   var letters = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
   for(let i = 0; i<6;i++) {
@@ -69,12 +63,26 @@ generateColor() {
   }
   return this.color;
 }
+changeName(){
+  if(this.flag==false){
+this.name='Rathore';
+this.currentCssClass='styleRed'
+  }else{
+    this.name='Vikram';
+    this.currentCssClass='styleWhite'
+  }
+  console.log(this.name);
+  this.flag=!this.flag;
+}
+
+
+
 
 sH(hero){
     this.selectedhero=hero;
     console.log(hero);
 }
-  constructor(private _data: DataService) { }
+  constructor(private _data: ProductService) { }
 
   ngOnInit() {
     this._data.goal.subscribe(res => this.goals = res);

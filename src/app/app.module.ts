@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DataService } from './data.service';
+import { ProductService } from './productservice';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +19,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
     FooterComponent,
     HeaderComponent,
     ProductAddComponent,
-    ProductUpdateComponent
+    ProductUpdateComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,7 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [DataService],
+  providers: [ProductService , AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,12 +6,12 @@ import { Http, Headers } from "@angular/http";
   providedIn: 'root'
 })
 
-export class DataService {
+export class ProductService {
 
   private goals = new BehaviorSubject<any>(['The initial goal', 'Another silly life goal']);
   goal = this.goals.asObservable();
 
-  private basrUrl: string = 'http://localhost:5555/products';
+  private basrUrl: string = 'http://localhost:3000/products';
   constructor(private http: Http) { }
 
   changeGoal(goal) {
@@ -23,6 +23,9 @@ export class DataService {
  addItem(item) {
   return this.http.post(this.basrUrl, item);
 }
+ cancelBtn(){
+   return this.http.get(this.basrUrl)
+ }
 deleteItem(id) {
   return this.http.delete(this.basrUrl+"/"+id);
 }

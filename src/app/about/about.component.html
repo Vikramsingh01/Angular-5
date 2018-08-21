@@ -6,3 +6,14 @@
     {{ goal }}
   </li>
 </ul>
+
+ <ul class = "list-group">
+<li>{{teams[0]}}</li>
+<li>{{teams[1]}}</li>
+<li>{{teams[2]}}</li>
+<li>{{teams[3]}}</li>
+</ul> 
+<button type="button" class="btn btn-primary" (click)="SwitchTeams()" name="button" [disabled] = 'alreadyswitching'>Start Switching</button>
+<button type="button" class="btn btn-danger" (click)="StopSwitchTeams()" name="button" [disabled]='stopSwitchStatus'>Stop Switching</button>
+
+

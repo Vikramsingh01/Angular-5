@@ -1,9 +1,10 @@
+<div class="navbar-navbar-menu" *ngIf="authService.isAuthenticated()">
 <ul>
-  <li><a routerLink="">Home</a></li>
+  <li ><a routerLink="home">Home</a></li>
   <li><a routerLink="about/48">About</a></li>
   <li><a routerLink="tempsignup">TempSignUp</a>
   <li><a routerLink="reactivesignup">ReactiveSignUp</a>
   <li><a routerLink="dataservices">DataService</a>
       <li><a routerLink="product">Product</a>
   </ul>
-  
+</div>

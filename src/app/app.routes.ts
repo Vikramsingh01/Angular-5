@@ -5,12 +5,16 @@ import { TemplateDrivenComponent } from './template-driven/template-driven.compo
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { ListComponent } from './list/list.component'; 
 import { ProductRoutes } from './product/product.routes';
-
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
   export const routes: Routes = [
-    {path: '',component: HomeComponent},
+    { path: '', redirectTo: '/signin', pathMatch: 'full' },
+    {path: 'home',component: HomeComponent},
     {path: 'about/:id',component: AboutComponent},
     {path: 'tempsignup',component: TemplateDrivenComponent },
     {path: 'reactivesignup',component: ReactiveFormsComponent },
     {path: 'dataservices',component: ListComponent},
-    {path: 'product',children: ProductRoutes}
+    {path: 'product',children: ProductRoutes},
+    { path: 'signup', component: SignupComponent },
+    { path: 'signin', component: SigninComponent },
     ];

@@ -25,14 +25,14 @@
   <div>
     
 
-    <div class="" *ngFor="let hero of dcHeros; let i =index" (click)="sH(hero)" appAppBold bgColor='red'>
+    <div class="" *ngFor="let hero of dcHeros; let i =index" (click)="sH(hero)" appAppBold bgColor='grey'>
       <li>
       {{i+1}}  {{hero}}
     </li>
-
     </div>
+    
       <div [ngSwitch]="selectedhero" class="color-light" [ngStyle]="myStyle" >
-          <div *ngSwitchCase="'batman'">vikram</div>
+          <div *ngSwitchCase="dcHeros[0]">vikram</div>
           <div *ngSwitchCase="'superman'">prashant</div>
           <div *ngSwitchCase="'spirderman'">bharat</div>
           <div *ngSwitchCase="'IronMan'">vishal</div>
@@ -44,4 +44,4 @@
 <button type="button" name="button" (click)="changeName()">change Name</button>
 
 <h2 [style.color]="inputColor">Change Text color using ng model</h2>
-<input type="text" [(ngModel)] = "inputColor" name="" value="">
+<input type="text" [(ngModel)] = "inputColor" name="" value="inputColor">

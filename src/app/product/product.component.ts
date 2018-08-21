@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { ProductService } from '../productservice';
 import { Response, Http } from "@angular/http";
 
 @Component({
@@ -10,7 +10,7 @@ import { Response, Http } from "@angular/http";
 export class ProductComponent implements OnInit {
   items = [];
   date: Date = new Date();
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: ProductService) { }
 
   ngOnInit() {
     this.dataService.getlistItems().subscribe((response: Response)=>{

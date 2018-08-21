@@ -11,20 +11,20 @@ export class ReactiveFormsComponent implements OnInit {
   form:FormGroup;
 
   addUser() {
-   // var user: user;
-    //user=form.value;
-   // this.userList.push(user);
-  //  console.log(form.value);
+    //var user: user;
+   // user=form.value;
+   //console.log(form.value);
+   this.userList.push(this.form.value);
     console.log(this.form.value);
   }
 
   constructor() { }
 
   ngOnInit() {
-    this.form= new FormGroup({
+    this.form= new FormGroup({                                          
       name: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z][a-zA-Z]+')]),
       contact: new FormControl('',[Validators.required,Validators.pattern('[0-9]*'),Validators.maxLength(12),Validators.minLength(10)]),
-      email: new FormControl('',[Validators.required])
+      email: new FormControl('',[Validators.required,Validators.email])
     })
   }
 

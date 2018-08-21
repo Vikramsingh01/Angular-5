@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { ProductService } from '../productservice';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -11,7 +11,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class ProductUpdateComponent implements OnInit {
   productAddForm: FormGroup;
   productId;
-  constructor(private route: ActivatedRoute, private router: Router, private dataService: DataService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private dataService: ProductService) { }
 
   ngOnInit() {
     this.route.params.subscribe(param=>{

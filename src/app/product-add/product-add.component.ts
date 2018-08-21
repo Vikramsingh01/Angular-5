@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { ProductService } from '../productservice';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProductAddComponent implements OnInit {
   productAddForm: FormGroup;
-  constructor(private dataService: DataService, private router: Router,private route: ActivatedRoute) { }
+  constructor(private dataService: ProductService, private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.productAddForm = new FormGroup({
@@ -19,10 +19,12 @@ export class ProductAddComponent implements OnInit {
       price: new FormControl('')
     })
   }
-  addProduct(){
+  addProduct(){ 
     this.dataService.addItem(this.productAddForm.value).subscribe(res=>{
-      this.router.navigate['..'],{relativeTo: this.route}
+      this.router.navigate(['../'],{relativeTo: this.route})
     })
   }
-
+  cancelAdd(){   
+      this.router.navigate(['../'],{relativeTo: this.route}) 
+  }
 }
